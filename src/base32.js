@@ -298,7 +298,8 @@
 
   var encodeBytes = function (bytes) {
     var v1, v2, v3, v4, v5, base32Str = '', length = bytes.length;
-    for (var i = 0, count = parseInt(length / 5) * 5; i < count;) {
+    let count = 0;
+    for (var i = 0, count = Math.floor(length / 5) * 5; i < count;) {
       v1 = bytes[i++];
       v2 = bytes[i++];
       v3 = bytes[i++];
